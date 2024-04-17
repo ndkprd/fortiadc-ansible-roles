@@ -15,6 +15,8 @@ My collections (?) of Fortinet's FortiADC Ansible roles. All of them based on Fo
 
 ## Roles Dependency
 
+The roles kinda dependent to each other, kinda looks like this:
+
 ```
 glb-data-centers <-- glb-servers <-- glb-vs-pools <-- glb-hosts
 dns-policy <-- glb-hosts

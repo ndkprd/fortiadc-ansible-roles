@@ -15,12 +15,25 @@ My collections (?) of Fortinet's FortiADC Ansible roles. All of them based on Fo
 
 ## Roles Dependency
 
-The roles kinda dependent to each other, kinda looks like this:
+Because of FortiADC nature, some roles is dependent to another, kinda looks like this:
 
 ```
 glb-data-centers <-- glb-servers <-- glb-vs-pools <-- glb-hosts
 dns-policy <-- glb-hosts
 dns-policy <-- dns-zones
+```
+
+## About Idempotency
+
+I tried to make the roles as idempotent as possible. I probably missed some of them (just create an issue if you found one), but most of the time the tasks works like this:
+
+```
+if resource is undefined:
+    do POST task
+if resource is defined AND existing_resource_value != desired_resource_value:
+    do PUT task
+else
+    skip tasks
 ```
 
 ## About Tags

@@ -1,5 +1,7 @@
 # fortiadc-ansible-roles
 
+## Descriptions
+
 My collections (?) of Fortinet's FortiADC Ansible roles. All of them based on FortiADC HTTP REST API, utilized by `ansible.builtin.uri` module.
 
 ## List of Roles
@@ -22,6 +24,12 @@ glb-data-centers <-- glb-servers <-- glb-vs-pools <-- glb-hosts
 dns-policy <-- glb-hosts
 dns-policy <-- dns-zones
 ```
+
+## IaC Implementation
+
+To implement Infrastructure as Code for FortiADC using these roles, you can just directly use the right-most roles from the above dependency diagram, since it will automatically run the dependent role(s) first.
+
+Though to be noted, since I composed these roles for my personal (and corporate) use, I make them to my need, hence why I've only composed DNS-related configuration from FortiADC and not SLB.
 
 ## About Idempotency
 

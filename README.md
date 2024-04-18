@@ -44,6 +44,12 @@ else
     skip tasks
 ```
 
+## Limitation
+
+Some limitation that I'd like to tackle in the future:
+- I've only tested these roles against FortiADC running firmware 7.0;
+- Each single file in `tasks/` except `main.yaml` basically act like their own module, which makes these roles kinda have LOTS of tasks especially if you have lots of resource entries. And since I'm looping them using `include_tasks`, I haven't found a real good way to run the tasks in parallel.
+
 ## About Tags
 
 Almost all roles have tasks tagged with `debug` on them, which can be used to print out the value before and after each "action" tasks (usually either POST or PUT). If you already sure, you can skip them with `--skip-tags debug` args.
